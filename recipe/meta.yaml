@@ -1,5 +1,5 @@
 {% set name = "obplatform" %}
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8f82ae8f7f41368f392ccfdd00c8464ca55815e5b9d6d36d13a3888d850a4714
+  sha256: fa57a751a135788a43488601022f655d122ad7f660334739600aae0a14287bcd
 
 build:
   noarch: python
