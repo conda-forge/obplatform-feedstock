@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: fa57a751a135788a43488601022f655d122ad7f660334739600aae0a14287bcd
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
-    - python >=3.7,<4.0
+    - python {{ python_min }}
     - pip
     - poetry
   run:
-    - python >=3.7.1,<4.0
+    - python >={{ python_min }},<4.0
     - requests >=2
     - tqdm >=4
 
@@ -29,6 +29,7 @@ test:
     - obplatform
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
